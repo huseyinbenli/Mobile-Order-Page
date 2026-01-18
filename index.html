@@ -23,6 +23,33 @@
     <section id="cart" class="cart-section">
       <!--  content goes here -->
     </section>
+    <section class="form-section">
+      <h3>Enter card details</h3>
+      <form id="form">
+        <input
+          type="text"
+          name="fullName"
+          placeholder="Enter your name"
+          required
+        />
+
+        <input
+          type="number"
+          name="cardNumber"
+          placeholder="Enter card number"
+          required
+        />
+
+        <input
+          type="number"
+          name="cvvNUmber"
+          placeholder="Enter CVV"
+          required
+        />
+        <button type="submit" class="pay-btn">Pay</button>
+      </form>
+    </section>
+
     <script type="module" src="script.js"></script>
   </body>
 </html>
