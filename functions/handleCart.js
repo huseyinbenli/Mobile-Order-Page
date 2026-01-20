@@ -17,15 +17,26 @@ export function addToCart(itemId) {
   renderCart(cart);
 }
 
-function renderCart(cart) {
-  const totalPrice = cart.reduce(
+export function removeItem(itemId) {
+  const selectedCartItem = menuArray.filter((item) => {
+    return parseInt(itemId) === parseInt(item.id);
+  })[0];
+  const index = cart.indexOf(selectedCartItem);
+  if (index > -1) {
+    cart.splice(index, 1);
+  }
+  renderCart(cart);
+}
+
+export function renderCart(arr) {
+  const totalPrice = arr.reduce(
     (total, menu) => total + menu.price * menu.quantity,
     0
   );
   let htmlEL = "";
   let finalOrder = "";
-  if (cart.length > 0) {
-    cart.map((menu) => {
+  if (arr.length > 0) {
+    arr.map((menu) => {
       const { name, price, quantity, id } = menu;
       return (htmlEL += `
       <div class="cart-item">
@@ -47,15 +58,4 @@ function renderCart(cart) {
     `;
   }
   cartSection.innerHTML = finalOrder;
-}
-
-export function removeItem(itemId) {
-  const selectedCartItem = menuArray.filter((item) => {
-    return parseInt(itemId) === parseInt(item.id);
-  })[0];
-  const index = cart.indexOf(selectedCartItem);
-  if (index > -1) {
-    cart.splice(index, 1);
-  }
-  renderCart(cart);
 }
