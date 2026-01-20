@@ -23,32 +23,41 @@
     <section id="cart" class="cart-section">
       <!--  content goes here -->
     </section>
-    <section class="form-section">
-      <h3>Enter card details</h3>
-      <form id="form">
-        <input
-          type="text"
-          name="fullName"
-          placeholder="Enter your name"
-          required
-        />
+    <div id="form-section-wrapper" class="hidden">
+      <section class="form-section">
+        <form id="order-form" class="form">
+          <h3>Enter card details</h3>
+          <input
+            type="text"
+            name="fullName"
+            placeholder="Enter your name"
+            required
+          />
 
-        <input
-          type="number"
-          name="cardNumber"
-          placeholder="Enter card number"
-          required
-        />
+          <input
+            pattern="^[0-9]+$"
+            maxlength="12"
+            type="text"
+            name="cardNumber"
+            placeholder="Enter card number"
+            required
+          />
 
-        <input
-          type="number"
-          name="cvvNUmber"
-          placeholder="Enter CVV"
-          required
-        />
-        <button type="submit" class="pay-btn">Pay</button>
-      </form>
-    </section>
+          <input
+            type="text"
+            pattern="^[0-9]+$"
+            maxlength="3"
+            name="cvvNUmber"
+            placeholder="Enter CVV"
+            required
+          />
+          <button type="submit" class="pay-btn" id="pay-btn">Pay</button>
+          <button class="cancel-btn" class="cancel-btn" id="cancel-btn">
+            Cancel
+          </button>
+        </form>
+      </section>
+    </div>
 
     <script type="module" src="script.js"></script>
   </body>
