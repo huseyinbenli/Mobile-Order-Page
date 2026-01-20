@@ -3,6 +3,17 @@ body {
   padding: 0;
   font-family: "Smythe", system-ui;
 }
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
 
 /* Header Section */
 .header-title {
@@ -142,4 +153,77 @@ body {
   color: #bbbbbb;
   margin-right: auto;
   cursor: pointer;
+}
+
+/* Form Section */
+
+.hidden {
+  display: none;
+}
+
+.form-section {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(5px);
+}
+
+.form,
+.processing {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2rem;
+  width: 500px;
+  height: 500px;
+  background-color: #fff;
+  text-align: center;
+  padding: 1rem;
+}
+
+input {
+  border: 1.5px solid #757575;
+  border-radius: 3px;
+  padding: 1.25rem;
+  font-size: 1.2rem;
+}
+
+.pay-btn,
+.cancel-btn {
+  color: #ffffff;
+  background-color: #16db99;
+  border: transparent;
+  border-radius: 3px;
+  padding: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  font-size: 1.25rem;
+}
+
+h3 {
+  margin: 0;
+  font-size: 1.5rem;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.processing {
+  font-size: 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+svg {
+  width: 100px;
+  align-self: center;
+}
+
+.ty-div {
+  display: flex;
+  justify-content: center;
+  font-size: 2rem;
+  background-color: #ecfdf5;
+  color: #065f46;
 }
