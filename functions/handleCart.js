@@ -1,17 +1,11 @@
 import { menuArray } from "../data.js";
 const cartSection = document.getElementById("cart");
-const cart = [];
+export let cart = [];
 
 export function addToCart(itemId) {
   const selectedMenuItem = menuArray.filter((item) => {
     return parseInt(itemId) === parseInt(item.id);
   })[0];
-
-  // Add a check to ensure selectedMenuItem is not undefined
-  if (!selectedMenuItem) {
-    console.warn(`Item with ID ${itemId} not found in menuArray.`);
-    return; // Exit the function if the item is not found
-  }
 
   if (!cart.includes(selectedMenuItem)) {
     cart.push(selectedMenuItem);
@@ -49,7 +43,7 @@ function renderCart(cart) {
       <p class="total-price-text">Total Price:</p>
       <p class="total-price">$${totalPrice}</p>
     </div>
-    <button id="order-btn" class="order-btn">Complete Order</button>
+    <button class="order-btn">Complete Order</button>
     `;
   }
   cartSection.innerHTML = finalOrder;
