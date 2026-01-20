@@ -1,6 +1,6 @@
 import { menuArray } from "./data.js";
 import { renderMenu } from "./functions/renderMenu.js";
-import { renderHeader } from "/functions./renderHeader.js";
+import { renderHeader } from "./functions./renderHeader.js";
 import { addToCart, removeItem } from "./functions/handleCart.js";
 // import { renderCart, cart } from "./functions/handleCart.js";
 import { svg } from "./image/svg.js";
